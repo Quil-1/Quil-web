@@ -16,7 +16,7 @@ const Navbar = () => {
 	}
 
 	return (
-		<nav className="bg-[#15191D] h-[4.5rem] lg:h-24 w-full sticky top-0 z-50">
+		<nav className="bg-[#15191D] h-[4.5rem] lg:h-24 w-full sticky top-0 z-50 bg-[url(/assets/images/Union.svg)] bg-no-repeat bg-center bg-origin-border bg-cover">
 			<div className="hidden lg:flex justify-between items-center pl-12 pr-12 pt-4 pb-4 w-full">
 				<div className="flex justify-center items-center gap-2">
 					<Image className=" cursor-pointer" src={logo} width={30} quality={100} alt="icon"/>

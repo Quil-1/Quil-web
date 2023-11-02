@@ -11,10 +11,10 @@ const FormSection = () => {
 
 
 	return (
-		<div className="bg-white p-8 md:p-28 md:pt-16 md:pb-12 w-full ">
+		<div className="bg-white p-8 md:p-10 lg:p-28 md:pt-16 md:pb-12 w-full ">
 			<div className="flex flex-col gap-12 md:flex-row justify-center items-center md:justify-between  ">
 			    <div className="flex flex-col gap-8 w-full md:w-1/2 ">
-				    <div className="flex flex-col gap-2">
+				    <div className="flex flex-col items-center md:items-start gap-2">
 						<label className="font-space-grotesk font-bold text-[#15191D] text-lg" htmlFor="name">Your Name</label>
 						<input 
 						    className="placeholder:text-[#3A3A3A66] placeholder:font-inter text-poppins w-80 border-[1px] h-12 pl-6 border-black"
@@ -26,7 +26,7 @@ const FormSection = () => {
 						    onChange={(e) => setForm({...form, name:e.target.value})}
 						/>
 					</div>
-					<div className="flex flex-col gap-2">
+					<div className="flex flex-col items-center md:items-start gap-2">
 						<label className="font-space-grotesk font-bold text-[#15191D] text-lg" htmlFor="companyName">Company name</label>
 						<input 
 						    className="placeholder:text-[#3A3A3A66] placeholder:font-inter text-poppins w-80 border-[1px] h-12 pl-6 border-black"
@@ -38,7 +38,7 @@ const FormSection = () => {
 						    onChange={(e) => setForm({...form, companyName:e.target.value})}
 						/>
 					</div>
-					<div className="flex items-center gap-12">
+					<div className="flex items-center justify-center md:justify-start gap-12">
 					    <div className="flex items-center gap-2">
 							<input 
 							    className="w-6 h-6"
@@ -63,7 +63,7 @@ const FormSection = () => {
 					    </div>	
 					</div>
 				</div>
-				<div className="flex flex-col items-start md:items-end gap-12 w-full md:w-1/2">
+				<div className="flex flex-col items-center md:items-end gap-12 w-full md:w-1/2">
 					<textArea
 					   className="placeholder:text-[#3A3A3A66] placeholder:font-inter text-poppins w-80 border-[1px] h-40 pl-6 pt-4 border-black"
 					    name="message"

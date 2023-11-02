@@ -10,7 +10,7 @@ const Partners = () => {
 				<h1 className="flex flex-col gap-3 font-poppins font-bold text-white text-xl md:text-3xl lg:text-4xl p-2 text-center">Meet Our partner <span className="">NGO firms</span></h1>
 				<p className="font-inter text-[#FFFFFF66] text-base text-center">Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor</p>
 			</div>
-			<div className="-mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pr-20 lg:pl-20 xl:pl-24 xl:pr-24 place-items-center">
+			<div className="-mt-24 grid grid-cols-lgg gap-16 md:gap-8 lg:gap-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pr-20 lg:pl-20 xl:pl-24 xl:pr-24 place-items-center">
 				{list.map((item) => (<Card key={item}/>))}
 			</div>
 			<div className="flex justify-center items-center gap-2 p-8 mt-2">

@@ -7,8 +7,8 @@ import ImagePlaceholder from '../../public/assets/images/ImagePlaceholder.png'
 
 const Herosection = () => {
 	return (
-		<div className="bg-[#15191D] p-8 lg:p-12 flex flex-col md:flex-row lg:justify-between ">
-			<div className="w-full md:w-1/2 flex flex-col mt-8 gap-10">
+		<div className="bg-[#15191D] p-8 lg:p-12 flex flex-col md:flex-row lg:justify-between bg-[url(/assets/images/Union.svg)] bg-no-repeat bg-center bg-origin-border bg-cover">
+			<div className="w-full md:w-1/2 flex flex-col mt-8 gap-10 ">
 				<Image className=" " src={SlideIndicator} width={200} quality={100} alt="icon"/>
 				<h1 className="font-space-grotesk font-bold text-3xl md:text-5xl text-white">Having Issues at work? Let <br/><span className="text-[#BCE743]">Quill</span> handle it.</h1>
 			    <p className="font-poppins text-sm font-light text-white ">Lorem ipsum dolor sit malor orem ipsum dolor <br/>sit Lorem ipsum dolor sit malor orem ipsum <br/>dolor </p>
@@ -24,7 +24,7 @@ const Herosection = () => {
 				    </div>
 			    </div>
 			</div>
-			<div className="w-full md:w-1/2 flex justify-center mt-10 lg:mt-0 lg:justify-end relative">
+			<div className="w-full md:w-1/2 flex justify-center mt-10 lg:mt-0 lg:justify-end relative ">
 			    <div className="bg-white flex justify-center items-center gap-4 rounded-[40px] w-36 h-12 absolute bottom-20 md:bottom-24 lg:bottom-32 -left-6 md:-left-10 lg:left-0 z-10">
 			    	<Image className=" " src={Foodd} width={30} quality={100} alt="icon"/>
 			    	<p className="font-inter text-sm font-light text-[#000000]">Get Help</p>
