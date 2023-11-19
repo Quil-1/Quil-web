@@ -28,7 +28,7 @@ const Navbar = () => {
 					<Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/about" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/about" >About</Link>
 					<Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/contact" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/contact" >Contact</Link>
 				</ul>
-				<Link className="" href="/">
+				<Link className="" href="/register">
 				    <button className="font-space-grotesk font-bold text-[#15191D] text-lg bg-[#BCE743] h-12 w-48 rounded-[5px]">Create Account</button>
 				</Link>
 			</div>
@@ -50,7 +50,7 @@ const Navbar = () => {
 						<Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/partners" ? "border-b-[3px] border-[#BCE743]": ""}`}  href="/partners" >Partners</Link>
 						<Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/about" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/about" >About</Link>
 						<Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/contact" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/contact" >Contact</Link>
-						<Link className="" href="/">
+						<Link className="" href="/register">
 					        <button className="font-space-grotesk font-bold text-[#15191D] text-lg bg-[#BCE743] h-12 w-48 rounded-[5px]">Create Account</button>
 					    </Link>
 					</ul>
