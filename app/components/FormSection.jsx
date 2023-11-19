@@ -64,7 +64,7 @@ const FormSection = () => {
 					</div>
 				</div>
 				<div className="flex flex-col items-center md:items-end gap-12 w-full md:w-1/2">
-					<textArea
+					<textarea
 					   className="placeholder:text-[#3A3A3A66] placeholder:font-inter text-poppins w-80 border-[1px] h-40 pl-6 pt-4 border-black"
 					    name="message"
 					    id="message"
