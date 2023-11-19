@@ -1,17 +1,17 @@
 import './globals.css'
-import { Poppins, Inter } from 'next/font/google'
+import {  Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', })
 
-const poppins = Poppins({ 
-  subsets: ['latin'], 
-  variable: '--font-poppins',
-  display: 'swap',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], 
-})
+// const poppins = Poppins({ 
+//   subsets: ['latin'], 
+//   variable: '--font-poppins',
+//   display: 'swap',
+//   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], 
+// })
 
 const space_grotesk = localFont({
   variable: '--font-space-grotesk',
@@ -48,7 +48,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${space_grotesk.variable} ${inter.variable} `}>
+      <body className={` ${space_grotesk.variable} ${inter.variable} `}>
         
         {children}
         <Footer/>
