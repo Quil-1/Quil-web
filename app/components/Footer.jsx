@@ -5,7 +5,7 @@ import logo from '../../public/assets/images/logo.svg'
 
 const Footer = () => {
 	return (
-		<div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center p-0 md:p-16 mt-12 lg:pt-4">
+		<div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center p-0 pb-12 md:p-16 mt-12 lg:pt-4">
 		    <div className="flex flex-col items-center md:items-start gap-6 mt-8 md:mt-0">
 				<div className="flex justify-start items-center gap-2">
 					<Image className="cursor-pointer" src={logo} width={30} quality={100} alt="icon"/>
