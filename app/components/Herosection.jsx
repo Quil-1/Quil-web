@@ -57,7 +57,7 @@ const Herosection = () => {
 			    </div>
 			</div>
 			<div className="w-full md:w-1/2 flex justify-center mt-10 lg:mt-0 lg:justify-end relative ">
-			    <div className="bg-white flex justify-center items-center gap-4 rounded-[40px] w-36 h-12 absolute bottom-20 md:bottom-24 lg:bottom-32 -left-6 md:-left-10 lg:left-0 z-10">
+			    <div className="bg-white flex justify-center items-center gap-4 rounded-[40px] w-36 h-12 absolute bottom-20 md:bottom-24 lg:bottom-32 -left-6 md:-left-10 lg:left-3 z-10">
 			    	<Image className=" " src={Foodd} width={30} quality={100} alt="icon"/>
 			    	<p className="font-inter text-sm font-light text-[#000000]">Get Help</p>
 			    </div>

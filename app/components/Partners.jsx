@@ -67,10 +67,10 @@ const Partners = () => {
 									    />
 								    </div>
 								    <div className="flex flex-col gap-2 bg-[#111111] justify-center items-center p-6 pb-8">
-									    <a href={partners[clickedId].email} target="_blank" rel="noopener noreferrer" className="bg-[#9F1FED] rounded-[5px] w-48 h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Email</a>
-									    <a href={partners[clickedId].facebook} target="_blank" rel="noopener noreferrer" className="bg-[#0E71B9] rounded-[5px] w-48 h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Facebook</a>
-									    <a href={partners[clickedId].twitter} target="_blank" rel="noopener noreferrer" className="bg-[#58A4EA] rounded-[5px] w-48 h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Twitter</a>
-									    <a href={partners[clickedId].instagram} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#F42B7F] to-[#F6DE8C] rounded-[5px] w-48 h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Instagram</a>
+									    <a href={partners[clickedId].email} target="_blank" rel="noopener noreferrer" className="bg-[#9F1FED] rounded-[5px] w-48 h-12 lg:h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Email</a>
+									    <a href={partners[clickedId].facebook} target="_blank" rel="noopener noreferrer" className="bg-[#0E71B9] rounded-[5px] w-48 h-12 lg:h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Facebook</a>
+									    <a href={partners[clickedId].twitter} target="_blank" rel="noopener noreferrer" className="bg-[#58A4EA] rounded-[5px] w-48 h-12 lg:h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Twitter</a>
+									    <a href={partners[clickedId].instagram} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#F42B7F] to-[#F6DE8C] rounded-[5px] w-48 h-12 lg:h-8 font-space-grotesk text-white text-sm flex justify-center items-center">Instagram</a>
 								    </div>
 							    </div>
 							</div>

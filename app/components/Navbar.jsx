@@ -57,7 +57,7 @@ const Navbar = () => {
 					<p className="text-white text-xl md:text-2xl lg:text-3xl font-space-grotesk font-bold">Quill</p>
 				</div>
 				<ul className="flex justify-center items-center gap-16 text-white font-space-grotesk font-semibold text-base">
-					<Link className={`pb-3 hover:text-[#BCE743] ${activeSection === null ? "border-b-[3px] border-[#BCE743]": ""}`} href="/"  >Home</Link>
+					<Link className={`pb-3 hover:text-[#BCE743] ${!activeSection && pathname ==="/" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/"  >Home</Link>
 					<Link className={`pb-3 hover:text-[#BCE743] ${activeSection === "partners" ? "border-b-[3px] border-[#BCE743]": ""}`}  href="#partners" onClick={(e) => handleClick(e, '#partners')} >Partners</Link>
 					<Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/about" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/about" >About</Link>
 					<Link className={`pb-3 hover:text-[#BCE743] ${activeSection === "contact" ? "border-b-[3px] border-[#BCE743]": ""}`} href="#contact" onClick={(e) => handleClick(e, '#contact')} >Contact</Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
 	                className={`w-full bg-[#15191D] h-screen p-6 -mt-2 ${!closeMobile ? "hidden" : ""}`}
 				>
 					<ul className="flex flex-col justify-center gap-12 text-white font-space-grotesk font-semibold text-base">
-						<li onClick={() => setCloseMobile(false)}><Link className={`pb-3 hover:text-[#BCE743] ${activeSection === null ? "border-b-[3px] border-[#BCE743]": ""}`} href="/" >Home</Link></li>
+						<li onClick={() => setCloseMobile(false)}><Link className={`pb-3 hover:text-[#BCE743] ${!activeSection && pathname ==="/" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/" >Home</Link></li>
 						<li onClick={() => setCloseMobile(false)}><Link className={`pb-3 hover:text-[#BCE743] ${activeSection === "partners" ? "border-b-[3px] border-[#BCE743]": ""}`}  href="#partners" onClick={(e) => handleClick(e, '#partners')}>Partners</Link></li>
 						<li onClick={() => setCloseMobile(false)}><Link className={`pb-3 hover:text-[#BCE743] ${pathname === "/about" ? "border-b-[3px] border-[#BCE743]": ""}`} href="/about" >About</Link></li>
 						<li onClick={() => setCloseMobile(false)}><Link className={`pb-3 hover:text-[#BCE743] ${activeSection === "contact" ? "border-b-[3px] border-[#BCE743]": ""}`} href="#contact" onClick={(e) => handleClick(e, '#contact')}>Contact</Link></li>
