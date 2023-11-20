@@ -13,7 +13,7 @@ const About = () => {
 			    <div className="flex flex-col gap-3 justify-center items-center p-8 md:p-16 lg:p-20 lg:w-2/3">
 					<h1 className="font-space-grotesk font-bold text-xl md:text-5xl text-white mb-6 md:mb-10 underline">About us</h1>
 					<p className="font-space-grotesk font-bold text-lg md:text-3xl text-white"><span className="text-[#BCE743]">Quill:</span> A Comprehensive HR Solution for Mental Well-being and Work-Life Balance</p>
-					<p className="font-poppins text-base text-white text-left">In today's fast-paced and demanding work environment, maintaining mental well-being is crucial for employee productivity and overall satisfaction. Quil is an innovative HR solution designed to address this critical need by providing a holistic approach to mental health support, connecting employees with relevant NGOs, and promoting work-life balance through an intelligent PC shutdown feature.</p>
+					<p className="font-poppins text-base text-white text-left">{`In today's fast-paced and demanding work environment, maintaining mental well-being is crucial for employee productivity and overall satisfaction. Quil is an innovative HR solution designed to address this critical need by providing a holistic approach to mental health support, connecting employees with relevant NGOs, and promoting work-life balance through an intelligent PC shutdown feature.`}</p>
 			    </div>
 			    <Image 
 				    className="w-full" 
@@ -68,7 +68,7 @@ const About = () => {
 				</div>
 				<div className="w-full md:w-2/3 p-8 md:p-16 md:ml-24 lg:ml-32 flex flex-col justify-center">
 					<p className="font-space-grotesk font-bold text-lg md:text-2xl text-[#15191D] mb-3">Promoting Work-Life Balance through PC Shutdown</p>
-					<p className="font-poppins text-base md:text-lg">Quill's intelligent PC shutdown feature plays a pivotal role in promoting work-life balance and preventing burnout. The solution automatically shuts down employees' PCs once they exceed their designated work hours, encouraging them to step away from their desks, take a break, and engage in activities that promote relaxation and stress relief.</p>
+					<p className="font-poppins text-base md:text-lg">{`Quill's intelligent PC shutdown feature plays a pivotal role in promoting work-life balance and preventing burnout. The solution automatically shuts down employees' PCs once they exceed their designated work hours, encouraging them to step away from their desks, take a break, and engage in activities that promote relaxation and stress relief.`}</p>
 				</div>
 			</div>
 			<Image 
@@ -85,7 +85,7 @@ const About = () => {
 
                     <li>2. Enhanced Employee Productivity: By addressing mental health concerns and promoting work-life balance, Quill leads to increased employee productivity and engagement.</li>
 
-                    <li>3. Strengthened Employer Brand: Quill demonstrates an organization's commitment to employee well-being, enhancing its reputation as an employer of choice.</li>
+                    <li>{`3. Strengthened Employer Brand: Quill demonstrates an organization's commitment to employee well-being, enhancing its reputation as an employer of choice.`}</li>
 		    	</ul>
 		    </div>
 		</div>
