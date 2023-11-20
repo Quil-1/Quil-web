@@ -1,8 +1,9 @@
 import './globals.css'
 import {  Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import LowerSection from './components/LowerSection'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', })
 
@@ -49,8 +50,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={` ${space_grotesk.variable} ${inter.variable} `}>
-        
+        <Navbar/>
         {children}
+        <LowerSection/>
         <Footer/>
       </body>
     </html>

@@ -5,11 +5,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Vector from '../../public/assets/images/Vector.svg'
 import { FaEyeSlash } from "react-icons/fa";
+import {auth, db} from '../config/Firebase'
+import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
+import {addDoc, collection} from 'firebase/firestore';
+import { useRouter } from 'next/navigation'
 
 
 const Register = () => {
+	const router = useRouter()
 	const [passwordToggle, setPasswordToggle] = useState(false);
 	const [passwordToggle2, setPasswordToggle2] = useState(false);
+	const [isValid, setIsValid] = useState(true);
+	const [phoneValid, setPhoneValid] = useState(true);
+	const [passwordValid, setPasswordValid] = useState(true);
+	const [errorMessage, setErrorMessage] = useState("");
 	const [stage, setStage] = useState(1);
 	const [form, setForm] = useState({
 		name: "",
@@ -19,12 +28,63 @@ const Register = () => {
 		password: "",
 		confirmPassword: ""
 	})
+	const handleEmail = (e) => {
+		const inputEmail = e.target.value;
+	    setForm({...form, email:inputEmail});
+
+	    // Regular expression for email validation
+	    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	    setIsValid(emailRegex.test(inputEmail));
+	}
+	const handlePhoneNumber = (e) => {
+		const inputNumber = e.target.value;
+		setForm({...form, phoneNumber:inputNumber})
+		const phoneRegex = /^\+234[789][01]\d{8}$/;
+		setPhoneValid(phoneRegex.test(inputNumber));
+	}
+
+	const handlePassword = (e) => {
+		const inputPassword = e.target.value;
+		setForm({...form, password:inputPassword})
+		const passwordRegex = /^(?=.*[A-Z])(?=.*[@*&])[A-Za-z@*&]{7,}$/;
+		setPasswordValid(passwordRegex.test(inputPassword));
+	}
 
 	const handleStage = () => {
 		if(stage === 1){
-			setStage(2)
+			if(form.name === "" || form.email ==="" || phoneNumber==="" || form.placeOfWork === ""){
+				return
+			}else{
+			    setStage(2)
+		    }
 		}else{
-			setStage(1)
+			register()
+		}
+	}
+
+	const register = async () => {
+		if(form.name === "" || form.email ==="" || form.password === "" || form.placeOfWork === ""){
+			return
+		}
+		if (form.password !== form.confirmPassword){
+			setErrorMessage("password doesn't match")
+		}
+		try{
+		    await createUserWithEmailAndPassword(auth,form.email, form.password);
+		    await updateProfile(auth.currentUser, {
+			    displayName: form.name
+			});
+			const userDocRef = collection(db,form.email) 
+			await addDoc(userDocRef,{
+				name: form.name,
+			    phoneNumber: form.phoneNumber,
+			    placeOfWork: form.placeOfWork
+			});
+			router.push('/dashboard')
+
+		}catch(err){
+			console.error(err);
+			//setErrorMessage("Invalid Credentials")
 		}
 	}
 
@@ -57,8 +117,9 @@ const Register = () => {
 						    id="phoneNumber"
 						    type="text"
 						    value={form.phoneNumber}
-						    onChange={(e) => setForm({...form, phoneNumber:e.target.value})}
+						    onChange={(e) => handlePhoneNumber(e)}
 						/>
+						{!phoneValid && <p className="text-red-300 -mt-2">Invalid phone number</p>}
 					</div>
 					<div className="flex flex-col gap-2">
 						<label className="text-white font-poppins text-base" htmlFor="email">Email</label>
@@ -68,8 +129,9 @@ const Register = () => {
 						    id="email"
 						    type="email"
 						    value={form.email}
-						    onChange={(e) => setForm({...form, email:e.target.value})}
+						    onChange={(e) => handleEmail(e)}
 						/>
+						{!isValid && <p className="text-red-300 -mt-2">Invalid email address</p>}
 					</div>
 					<div className="flex flex-col gap-2">
 						<label className="text-white font-poppins text-base" htmlFor="placeOfWork">Place of Work</label>
@@ -93,7 +155,7 @@ const Register = () => {
 							    id="password"
 							    type={passwordToggle ? "text" : "password"}
 							    value={form.password}
-							    onChange={(e) => setForm({...form, password:e.target.value})}
+							    onChange={(e) => handlePassword(e)}
 							/>
 
 							{   
@@ -110,6 +172,7 @@ const Register = () => {
 							    <FaEyeSlash className="text-white w-5 -translate-x-8 cursor-pointer" onClick={() => setPasswordToggle(true)}/>
 						    }
 					    </div>
+					    {!passwordValid && <p className="text-red-300 -mt-2">Password must match the criteria below</p>}
 					    <ul>
 							<li className="font-space-grotesk font-light text-sm text-white flex items-center gap-2">
 								<button className="w-1 h-1 bg-white rounded-full"></button> Password should have 1 uppercase character
@@ -153,6 +216,17 @@ const Register = () => {
 			<div className="mt-16">
 				<button onClick={handleStage} className='font-inter font-bold text-sm md:text-base lg:text-lg bg-[#BCE743] w-80 md:w-96 lg:w-[30rem] h-12 rounded-[8px]'>{stage===1? 'Next': 'Sign Up'}</button>
 			</div>
+			{
+				errorMessage && <div className="absolute top-0 bottom-0 right-0 left-0 w-screen h-full bg-[#E5E5E5] flex flex-col justify-center items-center"
+				>
+				    
+					<div className="w-72 h-36 rounded-[8px] bg-white flex flex-col justify-center items-center gap-3">
+						<h1 className="text-center font-space-grotesk font-bold text-red-300"
+						>{errorMessage}</h1>
+						<div onClick={() => setErrorMessage("")} className=" rounded-[8px] w-28 text-center p-1 bg-[#BCE743] cursor-pointer">Try Again</div>
+					</div>
+				</div>
+			}
 		</div>
 	)
 }

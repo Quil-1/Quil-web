@@ -5,15 +5,32 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Vector from '../../public/assets/images/Vector.svg'
 import { FaEyeSlash } from "react-icons/fa";
+import { useRouter } from 'next/navigation'
+import {auth} from '../config/Firebase'
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 const Login = () => {
+	const router = useRouter()
 	const [passwordToggle, setPasswordToggle] = useState(false);
 	const [passwordToggle2, setPasswordToggle2] = useState(false);
 	const [form, setForm] = useState({
 		email: "",
 		password: ""
 	})
+
+	const handleLogin = async () => {
+		if(form.email ==="" || form.password === "" ){
+			return
+		}
+		try{
+		    await signInWithEmailAndPassword(auth, form.email, form.password)
+			router.push('/dashboard')
+		}catch(err){
+			console.error(err);
+			//setErrorMessage("Invalid Credentials")
+		}
+	}
 
 	return (
 		<div className=" flex flex-col justify-center items-center bg-[#15191D] bg-[url(/assets/images/Union.svg)] bg-no-repeat bg-center bg-origin-border bg-cover p-8 lg:p-16 lg:pt-8">
@@ -60,7 +77,7 @@ const Login = () => {
 				</div>
 			</form>
 			<div className="mt-16">
-				<button className='font-inter font-bold text-sm md:text-base lg:text-lg bg-[#BCE743] w-80 md:w-96 lg:w-[30rem] h-12 rounded-[8px]'>Log in</button>
+				<button onClick={handleLogin} className='font-inter font-bold text-sm md:text-base lg:text-lg bg-[#BCE743] w-80 md:w-96 lg:w-[30rem] h-12 rounded-[8px]'>Log in</button>
 			</div>
 		</div>
 	)
