@@ -20,14 +20,14 @@ const Partners = () => {
 			</div>
 			<div className="-mt-24 grid grid-cols-lgg gap-16 md:gap-8 lg:gap-16 pl-8 pr-8 md:pl-16 md:pr-16 lg:pr-20 lg:pl-20 xl:pl-24 xl:pr-24 place-items-center">
 				{list.map((item,i) => (<div key={item}>
-					<Card key={item} id={item} setOpenModal={setOpenModal} setClickedId={setClickedId}/>
+					<Card id={item} setOpenModal={setOpenModal} setClickedId={setClickedId}/>
 					    { openModal && item === clickedId &&
 						    <div key={clickedId} className="w-full h-full bg-modal-background absolute left-0 flex justify-center items-center top-0 bottom-0 right-0">
 						        <div className="">
 						            <div className='bg-white flex flex-col gap-2 justify-center items-center rounded-t-[30px] p-6 pl-8 pr-8'>
 										<div onClick={() => setOpenModal(false)} className="bg-black w-fit rounded-full p-1 self-end cursor-pointer"><LiaTimesSolid className="text-white" /></div>
 										<p className="font-space-grotesk text-[#3A3A3A] text-center font-medium text-lg">You’ve been connected <br/>to XYZ</p>
-										<Image key={clickedId} 
+										<Image 
 										    className="w-[300px]" 
 										    src={partnerImage} 
 										    width={240} 
