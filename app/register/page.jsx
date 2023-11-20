@@ -74,6 +74,7 @@ const Register = () => {
 		    await updateProfile(auth.currentUser, {
 			    displayName: form.name
 			});
+			console.log(auth.currentUser.displayName)
 			const userDocRef = collection(db,form.email) 
 			await addDoc(userDocRef,{
 				name: form.name,
@@ -87,6 +88,8 @@ const Register = () => {
 			//setErrorMessage("Invalid Credentials")
 		}
 	}
+
+	console.log(auth?.currentUser?.displayName)
 
 	return (
 		<div className=" flex flex-col justify-center items-center bg-[#15191D] bg-[url(/assets/images/Union.svg)] bg-no-repeat bg-center bg-origin-border bg-cover p-8 pb-12 lg:p-16 lg:pt-8">
@@ -215,9 +218,10 @@ const Register = () => {
 		    }
 			<div className="mt-16">
 				<button onClick={handleStage} className='font-inter font-bold text-sm md:text-base lg:text-lg bg-[#BCE743] w-80 md:w-96 lg:w-[30rem] h-12 rounded-[8px]'>{stage===1? 'Next': 'Sign Up'}</button>
+				<p className="text-white font-space-grotesk text-base text-center mt-4 ">Already have an ? <Link className="hover:text-[#BCE743]" href="/login">Log in</Link></p>
 			</div>
 			{
-				errorMessage && <div className="absolute top-0 bottom-0 right-0 left-0 w-screen h-full bg-[#E5E5E5] flex flex-col justify-center items-center"
+				errorMessage && <div className="absolute top-0 bottom-0 right-0 left-0 w-screen h-full bg-modal-background flex flex-col justify-center items-center"
 				>
 				    
 					<div className="w-72 h-36 rounded-[8px] bg-white flex flex-col justify-center items-center gap-3">

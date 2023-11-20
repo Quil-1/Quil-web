@@ -15,6 +15,9 @@ module.exports = {
       gridTemplateColumns: {
         'lgg': 'repeat(auto-fit, minmax(300px, 1fr));'
       },
+      colors: {
+        'modal-background' : 'rgba(177, 177, 180, 0.47)',
+      }
     },
   },
   plugins: [],
