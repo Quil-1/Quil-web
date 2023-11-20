@@ -44,7 +44,7 @@ const Herosection = () => {
 				{stage ===1 && <h1 className="font-space-grotesk font-bold text-3xl md:text-4xl text-white">{heroslide[stage].heroWords1}<span className="text-[#BCE743]">{heroslide[stage].heroWords2}</span>{heroslide[stage].heroWords3}<br/>{heroslide[stage].heroWords4}<span className="text-[#BCE743]">{heroslide[stage].heroextra}</span></h1>}
 				{stage >1 &&  <h1 className="font-space-grotesk font-bold text-3xl md:text-4xl text-white"><span className="text-[#BCE743]">{heroslide[stage].heroWords1}</span> {heroslide[stage].heroWords2} <br/>{heroslide[stage].heroWords3}</h1>}
 			    <p className="font-poppins text-base font-light text-white ">Your mental health is important. Make it a <br/>priority. You matter too!</p>
-			    <button className="font-space-grotesk font-bold text-white text-base border-[2px] rounded-[5px] w-48 h-12 hover:border-0 hover:text-[#15191D] hover:bg-[#BCE743] flex justify-center items-center gap-1">Download App <LiaDownloadSolid className="font-bold text-xl" /></button>
+			    <a href="https://lphkvolpvequyswccgnt.supabase.co/storage/v1/object/public/work_life_balance/work_life_balance.zip" download="work_life_balance.zip" className="font-space-grotesk font-bold text-white text-base border-[2px] rounded-[5px] w-48 h-12 hover:border-0 hover:text-[#15191D] hover:bg-[#BCE743] flex justify-center items-center gap-1">Download App <LiaDownloadSolid className="font-bold text-xl" /></a>
 			    <div className="flex items-center gap-12">
 				    <div className="flex items-center gap-2">
 				    	<h1 className="font-inter font-bold text-3xl md:text-3xl text-white">4.5K</h1>
