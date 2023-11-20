@@ -78,7 +78,7 @@ const Login = () => {
 			</form>
 			<div className="mt-16">
 				<button onClick={handleLogin} className='font-inter font-bold text-sm md:text-base lg:text-lg bg-[#BCE743] w-80 md:w-96 lg:w-[30rem] h-12 rounded-[8px]'>Log in</button>
-				<p className="text-white font-space-grotesk text-base text-center mt-4 ">Don't have an account ? <Link className="hover:text-[#BCE743]" href="/register">Create Account</Link></p>
+				{/*<p className="text-white font-space-grotesk text-base text-center mt-4 ">Don't have an account ? <Link className="hover:text-[#BCE743]" href="/register">Create Account</Link></p>*/}
 			</div>
 		</div>
 	)
